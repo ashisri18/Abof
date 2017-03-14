@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="device" value="ASUS"/>
+  <listeners>
+    <listener class-name="com.abof.library.TestngListener"/>
+    <listener class-name="com.abof.library.MyNXGTestListner"/>
+  </listeners>
+  <test name="Regression">
+    <parameter name="device" value="ASUS"/>
+    <classes>
+      <class name="com.abof.scripts.PaymentModuleScripts"/>
+    </classes>
+  </test> <!-- Regression -->
+  <test name="Regression(failed)">
+    <parameter name="device" value="ASUS"/>
+    <classes>
+      <class name="com.abof.scripts.PaymentModuleScripts">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="sample" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.abof.scripts.PaymentModuleScripts -->
+    </classes>
+  </test> <!-- Regression(failed) -->
+</suite> <!-- Failed suite [Suite] -->
